@@ -133,7 +133,7 @@ const EmployeeInfo: React.FC<EmployeeInfoProps> = ({
               </div>
               <div style={styles.info}>
                 <span>Location:</span>
-                <span style={{ color: "red" }}>Warehouse</span>
+                <span style={{ color: "red" }}>{data.RSSI >= -65 ?"Warehouse":"Not Assigned at any location"}</span>
               </div>
               <div style={styles.info}>
                 <span>Sensor ID:</span>
@@ -142,7 +142,7 @@ const EmployeeInfo: React.FC<EmployeeInfoProps> = ({
               <div style={styles.info}>
                 <span>Employee Status:</span>
                 <span style={{ color: "green" }}>
-                  {data.RSSI ? "Active" : "Offline"}
+                  {data.RSSI >= -65 ? "Active" : "Offline"}
                 </span>
               </div>
               {/* <div style={styles.info}>
